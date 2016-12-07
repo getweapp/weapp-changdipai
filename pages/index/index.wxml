@@ -1,0 +1,99 @@
+<!--index.wxml-->
+<!--<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>-->
+
+<view id="cdp" class="main">
+		<!-- 首页头部 -->
+		<view class="index-header mb20">
+			<view class="header-top">
+				<span class="logo"></span>
+				<span class="area" id="selectArea"><span>{{cityName}}</span></span>
+				<ul class="area-list hide" id="areaList" wx:for="{{cityList}}" wx:key="item.id">
+					<li>北京</li>
+					<li>北京</li>
+					<li>北京</li>
+					<li>北京</li>
+				</ul>
+			</view>
+			<view class="header-slogan">遇见你的专属场地</view>
+			<view class="header-search searchStart">点击搜索场地</view>
+		</view>
+		<!-- 小分类推荐 首页快速搜索-小 -->
+		 <view class="classify mb20">
+			<view class="clearfix">
+				<a href="search.html" class="classify-item">
+					<view class="classify-item-title">
+						<view>开个大Party</view>
+						<p>精心推荐10家场所</p>
+					</view>
+				</a>
+				<a href="javascript:;" class="classify-item">
+					<view class="classify-item-title">
+						<view>开个大Party</view>
+						<p>精心推荐10家场所</p>
+					</view>
+				</a>
+				<a href="javascript:;" class="classify-item">
+					<view class="classify-item-title">
+						<view>开个大Party</view>
+						<p>精心推荐10家场所</p>
+					</view>
+				</a>
+				<a href="javascript:;" class="classify-item">
+					<view class="classify-item-title">
+						<view>开个大Party</view>
+						<p>精心推荐10家场所</p>
+					</view>
+				</a>
+			</view>
+		</view> 
+		<!-- 场地派推荐 首页快速搜索-大 -->
+		<view class="part mb20">
+			<view class="part-title">场地派推荐</view>
+			<view class="recommend-wrapper swiper-container-recommend">
+			<swiper indicator-dots="{{indicatorDots}}"
+				autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+				<block wx:for="{{imgUrls}}" wx:key="item.id">
+					<swiper-item>
+					<image src="{{item}}" class="slide-image" />
+					</swiper-item>
+				</block>
+				</swiper>
+				<ul class="clearfix recommend swiper-wrapper"  id="fastSearch">
+					 <li class="recommend-item swiper-slide">
+						<view class="recommend-item-title">租个别墅开Party</view>
+					</li> 
+				</ul>
+			</view>
+		</view>
+		<!-- 热门场地 -->
+		<view class="part" id="hostPlaceList">
+			<view class="part-title" id="hostPlace">热门场地</view>
+			 <a href="detail.html" class="place-item" wx:for="{{suggests}}" wx:key="item.id">
+				<view class="place-item-img" style="background-image:url({{item.avatar}})">
+					<span class="placeType-info"><i wx:for="{{item.tags}}" wx:for-item="tag" wx:key="*this">{{tag}}</i></span>
+				</view>
+				<view class="place-item-info">
+					<view class="clearfix"><span class="place-item-info-title">{{item.name}}</span><span class="place-item-info-price"><i>￥</i>{{item.price}}<i>/天</i></span></view>
+					<p class="place-item-info-detail"><i>{{item.text}}</i></p>
+				</view>
+			</a> 
+			
+		</view>
+		<!-- 底部点击搜索 -->
+		<view class="part extra-part mb20 searchStart">
+			<a href="javascript:;">没有符合的?点击搜索更多场地 >></a>
+		</view>
+		<!-- 页脚 -->
+		<view class="footer clearfix">
+			<span>Copyright © 2016 场地派</span>
+			<a href="tel:10086">联系我们</a>
+		</view>
+	</view>
